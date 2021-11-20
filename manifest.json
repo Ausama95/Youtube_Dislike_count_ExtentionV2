@@ -9,8 +9,8 @@
   "options_page": "options.html",
   "permissions": [
     "*://*.youtube.com/*", 
-    "storage", 
-    "scripting", 
+    "storage",
+    "scripting",
     "tabs"
   ],
   "action": {
