@@ -1,14 +1,214 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./popup.css">
+    <title>Options</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      /* Modal Structure */
+
+      html,
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        min-height: 180px;
+        padding: 0;
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+        background-color: #212125;
+      }
+
+      h1 {
+        font-family: "Menlo", monospace;
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        color: #ffffff;
+      }
+
+      a:link,
+      a:visited {
+        color: #ffffff;
+        outline: 0;
+        text-decoration: none;
+      }
+
+      img {
+        width: 30px;
+      }
+
+      .modal-header {
+        align-items: center;
+        border-top: 3px solid #D11919;
+        border-right: 3px solid #D11919;
+        border-left: 3px solid #D11919;
+      }
+
+      .modal-content {
+        padding: 0 20px;
+        color: #ffffff;
+        border-top: 0.5px solid #6e6e6e;
+        border-right: 3px solid #D11919;
+        border-left: 3px solid #D11919;
+        border-bottom: 0.5px solid #6e6e6e;
+      }
+
+      .modal-icons {
+        border-right: 3px solid #D11919;
+        border-left: 3px solid #D11919;
+        border-bottom: 3px solid #D11919;
+        height: 50px;
+        width: 100%;
+      }
+
+      .logo {
+        padding: 16px;
+      }
+
+      .logo-icon {
+        vertical-align: text-bottom;
+        margin-right: 8px;
+      }
+
+      .version {
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .flex {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+        width: 30px;
+      }
+
+      .flex:hover {
+        opacity: 0.4;
+      }
+
+      .flex .fa {
+        font-size: 30px;
+        color: #ffffff;
+      }
+
+        .onoffswitch {
+        position: relative; width: 90px;
+        /* -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none; */
+        }
+        .onoffswitch-checkbox {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        }
+        .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #362020; border-radius: 20px;
+        }
+        .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+        }
+        .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+        }
+        .onoffswitch-inner:before {
+        content: "ON";
+        padding-left: 10px;
+        background-color: #D11919; color: #FFFFFF;
+        }
+        .onoffswitch-inner:after {
+        content: "OFF";
+        padding-right: 10px;
+        background-color: #EEEEEE; color: #000000;
+        text-align: right;
+        }
+        .onoffswitch-switch {
+        display: block; width: 18px; margin: 6px;
+        background: #FFFFFF;
+        position: absolute; top: 0; bottom: 0;
+        right: 56px;
+        border: 2px solid #362020; border-radius: 20px;
+        transition: all 0.3s ease-in 0s; 
+        }
+        .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+        }
+        .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+        }
+    
+    </style>
+    <script src="popup.js"></script>
   </head>
+
   <body>
-    <div id="buttonDiv">
+    <div class="modal-header">
+      <h1 class="logo">
+        <img class="logo-icon" src="images/obj-48x48.png" />Youtube Dislike Count 
+        Extention
+        <span class="version">[0.2][Beta]</span>
+      </h1>
     </div>
-    <div>
-      <p>Choose a different background color!</p>
+    <div class="modal-content">
+      <p>Toggle Extention
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div></p>
+        <p style="color: #D11919; font-weight: bold; text-align: left; text-decoration: underline;">
+          Note: The toggle switch doesn't function properly at the moment!... </p>
+        
+          
+          <hr style="border-bottom: 0.5px solid #6e6e6e">
+        <!-- Feed back -->
+          <p style="color: #ffffff; font-size: 20px; font-weight: bold; text-align: left;">Contact us</p>
+          <iframe width="75%" frameborder="0" height="430px" src="./mail/feedback_form/feedback_form.html"></iframe>     
+          <p>&copy; 2021 Ausama95</p>
+    </div>
+    
+    <div class="modal-icons">
+      <div class="flex-container">
+        <div class="flex">
+            <a href="https://github.com/Ausama95" target="_blank">
+              <i class="fa fa-github" style="color:rgb(151, 151, 151) "></i>
+            </a>
+        </div>
+        <div class="flex">
+          <a href="https://www.youtube.com/Ausama95" target="_blank">
+            <i class="fa fa-youtube" style="color:rgb(151, 151, 151) "></i>
+          </a>
+        </div>
+        <div class="flex">
+          <a href="https://www.twitter.com/Ausama95" target="_blank">
+            <i class="fa fa-twitter" style="color:rgb(151, 151, 151) "></i>
+          </a>
+        </div>
+      </div>
     </div>
   </body>
-  <script src="options.js"></script>
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<title>Feedback Form</title>	
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 290px;
+}
+
+input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 290px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #F00;
+    color: white;
+    padding: 2px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #F60;
+}
+
+.button {
+    background-color: #212125; 
+    border-radius: 4px;
+    border: none;
+    padding: 16px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 120px;
+    transition-duration: all 0.5s;
+    cursor: pointer;
+    border: 2px solid #D11919;
+}
+
+.button:hover {
+    background-color: #D11919;
+    transition: 0.5s;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s; 
+    color: #ffffff; 
+    border: none;
+    opacity: 1;
+    right: 0;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: white;
+}
+
+.button:hover span {
+    padding-right: 25px;
+    color: white;
+    transition: 0.5s;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
+
+<form method="post" action="send_mail.php">
+<p>
+<label>
+<input type="text" name="first_name" placeholder="Your name.." required>
+</label> 
+</p>
+<p>
+<label>
+<input type="email" name="email_address" placeholder="Email.." required>
+</label>
+</p>
+<p>
+<label>
+<textarea name="comments" maxlength="500" cols="30" rows="5" placeholder="Write something.." required></textarea>
+</label>
+</p>
+<p><button class="button" type="submit"><span>Submit</span></button></p>
+</form>
