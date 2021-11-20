@@ -1,0 +1,15 @@
+#dislike-bar-container {
+  background: #c85050;
+}
+
+#dislike-bar {
+  background: #5094c8;
+}
+
+[dark] #dislike-bar-container {
+  background: #ff3e3e;
+}
+
+[dark] #dislike-bar {
+  background: #3ea6ff;
+}

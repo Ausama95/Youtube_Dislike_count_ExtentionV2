@@ -1,0 +1,52 @@
+{
+  "name": "Youtube Dislike Count Extention",
+  "description": "This extention enables the YouTube dislike count!",
+  "version": "0.2",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "*://*.youtube.com/*", 
+    "storage", 
+    "scripting", 
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "./images/obj-16x16.png",
+      "32": "./images/obj-32x32.png",
+      "48": "./images/obj-48x48.png",
+      "128": "./images/obj-128x128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "./images/obj-16x16.png",
+    "32": "./images/obj-32x32.png",
+    "48": "./images/obj-48x48.png",
+    "128": "./images/obj-128x128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_start",
+      "css": ["content-style.css"]
+    }
+  ],
+  
+  "externally_connectable": {
+    "matches": ["*://*.youtube.com/*"]
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["script.js"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ]
+}
